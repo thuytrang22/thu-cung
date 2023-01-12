@@ -6,8 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{asset('assets/css/bootstrap/bootstrap.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/app.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/css/home.css')}}">
 </head>
 <body>
+<div>
+    <a href="{{route(config('shin.route.INDEX_ADMIN'))}}">Admin</a>
+</div>
 <header class="container header">
     <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container-fluid">

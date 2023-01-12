@@ -1,8 +1,10 @@
-@extends('layouts.view')
+{{--
+@extends('admin.layouts_admin.main')
 @section('content')
 
     <main>
-        @include('pages.home')
+
     </main>
 
 @endsection
+--}}

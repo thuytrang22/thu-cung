@@ -1,0 +1,51 @@
+/*header*/
+body {
+    background: #add8f6;
+margin: 20px 0;
+}
+body .container{
+    max-width: 90%;
+}
+.logo {
+    width: 300px;
+}
+
+.logo img {
+    width: 200px;
+    height: 80px;
+    object-fit: cover;
+}
+
+.nav-link {
+    color: #000000;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.text-me{
+    text-align: center;
+    padding: 10px;
+}
+.header{
+    display: flex;
+    gap: 20px;
+}
+.header .col-2{
+    background-color: #e5c7ca;
+}
+.header .col-10{
+    background-color: #ffffff;
+}
+.home_admin h3{
+    color: #a52834;
+    text-align: center;
+    margin: 10px 0;
+}
+.inner{
+    padding: 10px;
+}
+.inner img{
+    float: right;
+    width: 100px;
+    height: auto;
+}
