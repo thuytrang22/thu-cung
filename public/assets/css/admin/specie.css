@@ -1,0 +1,12 @@
+.specie .container{
+    border-radius: 10px;
+    background-color: #cfe2ff;
+    padding: 10px;
+    margin: 10px;
+    width: 98%;
+}
+h4{
+    text-decoration: underline ;}
+.col-auto{
+    margin-bottom: 10px;
+}

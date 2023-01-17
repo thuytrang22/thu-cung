@@ -27,6 +27,6 @@ class CreateSpeciesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('species');
+        Schema::dropIfExists('specie');
     }
 }

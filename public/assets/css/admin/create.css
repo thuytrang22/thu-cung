@@ -1,0 +1,38 @@
+.create  .col-lg-9{
+    background-color: rgba(255,218,6,0.61);
+    padding: 20px;
+    margin-top: 8%;
+}
+.form_create{
+    width: 600px;
+    margin: auto;
+}
+ .col-sm-2 {
+    margin-bottom: 20px;
+}
+.card-footer{
+    margin-top: 20px;
+}
+body{
+    max-width: unset;
+}
+.col-lg-9 .container{
+    padding: 50px;
+}
+.create{
+    background-color: #ffffff;
+    padding: 20px;
+}
+.create h3{
+    text-align: center;
+    padding-bottom: 20px;
+}
+.form_img .form{
+    font-size: 20px;
+    display: flex;
+}
+.form_name{
+    padding-bottom: 20px;
+    display: flex;
+}
+

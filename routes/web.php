@@ -2,8 +2,12 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\SlugController;
+use App\Http\Controllers\ImageController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\SpecieController;
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\AnimalController;
+use App\Http\Controllers\BlogController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,16 +20,51 @@ use App\Http\Controllers\AdminController;
 |
 */
 Route::prefix('shin')->group(function () {
-    Route::get('/', [HomeController::class, 'index']);
+    Route::get('/', [HomeController::class, 'index'])->name(config('shin.route.HOME'));
 });
 
 Route::prefix('admins')->group(function () {
-    Route::get('/', [AdminController::class, 'index'])->name(config('shin.route.INDEX_ADMIN'));
+    Route::get('/', [AdminController::class, 'index'])->name(config('shin.route.ADMIN'));
+
 });
 
+Route::prefix('species')->group(function () {
+    Route::get('/', [SpecieController::class, 'index'])->name(config('shin.route.SPECIE'));
+    Route::get('create', [SpecieController::class, 'create'])->name(config('shin.route.CREATE_SPECIE'));
+    Route::post('store', [SpecieController::class, 'store'])->name(config('shin.route.STORE_SPECIE'));
+    Route::post('edit', [SpecieController::class, 'edit'])->name(config('shin.route.EDIT_SPECIE'));
+    Route::put('update/{id}', [SpecieController::class, 'update'])->name('shin.route.UPDATE_SPECIE');
+    Route::get('show/{id}', [SpecieController::class, 'show'])->name(config('shin.route.SHOW_SPECIE'));
+    Route::delete('destroy' ,[SpecieController::class, 'destroy'])->name(config('shin.route.DESTROY_SPECIE'));
+});
+
+Route::prefix('animals')->group(function () {
+    Route::get('/', [AnimalController::class, 'index'])->name(config('shin.route.ANIMAL'));
+    Route::get('create', [AnimalController::class, 'create'])->name(config('shin.route.CREATE_ANIMAL'));
+    Route::post('store', [AnimalController::class, 'store'])->name(config('shin.route.STORE_ANIMAL'));
+    Route::post('edit', [AnimalController::class, 'edit'])->name(config('shin.route.EDIT_ANIMAL'));
+    Route::put('update/{id}', [AnimalController::class, 'update'])->name('shin.route.UPDATE_ANIMAL');
+    Route::get('show/{id}', [AnimalController::class, 'show'])->name(config('shin.route.SHOW_ANIMAL'));
+    Route::delete('destroy' ,[AnimalController::class, 'destroy'])->name(config('shin.route.DESTROY_ANIMAL'));
+});
+
+Route::prefix('product')->group(function () {
+    Route::get('/', [ProductController::class, 'index'])->name(config('shin.route.PRODUCT'));
+    Route::get('create', [ProductController::class, 'create'])->name(config('shin.route.CREATE_PRODUCT'));
+    Route::post('store', [ProductController::class, 'store'])->name(config('shin.route.STORE_PRODUCT'));
+    Route::post('edit', [ProductController::class, 'edit'])->name(config('shin.route.EDIT_PRODUCT'));
+    Route::put('update/{id}', [ProductController::class, 'update'])->name('shin.route.UPDATE_PRODUCT');
+    Route::get('show/{id}', [ProductController::class, 'show'])->name(config('shin.route.SHOW_PRODUCT'));
+    Route::delete('destroy' ,[ProductController::class, 'destroy'])->name(config('shin.route.DESTROY_PRODUCT'));
+});
+
+Route::prefix('blogs')->group(function () {
+    Route::get('/', [BlogController::class, 'index'])->name(config('shin.route.BLOG'));
+
+});
 Route::prefix('images')->group(function () {
-    Route::get('/', [SlugController::class, 'index'])->name(config('shin.route.INDEX_IMG'));
-    Route::get('create', [SlugController::class, 'create'])->name(config('shin.route.CREATE_IMG'));
-    Route::post('store',[SlugController::class,'store'])->name(config('shin.route.STORE_IMG'));
+    Route::get('/', [ImageController::class, 'index'])->name(config('shin.route.IMG'));
+    Route::get('create', [ImageController::class, 'create'])->name(config('shin.route.CREATE_IMG'));
+    Route::post('store',[ImageController::class,'store'])->name(config('shin.route.STORE_IMG'));
 });
 

@@ -5,8 +5,8 @@
         <section class="container">
             <div class="create">
                 <h3>Add A Image</h3>
-                <div class="form_img">
-
+                <div class="form_img row">
+                    <div class="col-6">
                     <form action="{{route(config('shin.route.STORE_IMG'))}}" method="post"
                           enctype="multipart/form-data">
                         @csrf
@@ -17,11 +17,14 @@
                         </div>
                         <div class="form_name">
                             <label for="">Image: </label>
-                            <input name="slug" id="slug" type="file" accept="image/*" class="form-control-file" required>
+                            <input name="slug" id="slug" type="file" accept="image/*" class="form-control-file"
+                                   required>
                         </div>
                         <button type="submit" class="btn btn-warning">Post</button>
-                        <a  class="btn btn-primary" href="{{route(config('shin.route.INDEX_IMG'))}}">Back</a>
+                        <a class="btn btn-primary" href="{{route(config('shin.route.INDEX_IMG'))}}">Back</a>
                     </form>
+                    </div>
+                    <div class="col-6"></div>
                 </div>
             </div>
         </section>

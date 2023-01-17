@@ -8,7 +8,7 @@ use Illuminate\Support\Str;
 class ImgService
 {
     /**
-     * @var ProjectRepository
+     * @var imgRepository
      */
     protected $imgRepository;
 
@@ -37,6 +37,7 @@ class ImgService
     {
 
         $file = $request->file('slug');
+
         $fileName = $file->getClientOriginalName();
 //        $fileName = pathinfo($file, PATHINFO_FILENAME);
         $hashName = $file->hashName();

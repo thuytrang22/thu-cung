@@ -3,9 +3,7 @@ body {
     background: #add8f6;
 margin: 20px 0;
 }
-body .container{
-    max-width: 90%;
-}
+
 .logo {
     width: 300px;
 }
@@ -30,10 +28,10 @@ body .container{
     display: flex;
     gap: 20px;
 }
-.header .col-2{
+.header .col-3{
     background-color: #e5c7ca;
 }
-.header .col-10{
+.header .col-9{
     background-color: #ffffff;
 }
 .home_admin h3{
@@ -43,9 +41,21 @@ body .container{
 }
 .inner{
     padding: 10px;
+    border: #ffffff;
+    border-style: solid;
 }
 .inner img{
     float: right;
     width: 100px;
     height: auto;
+}
+.form_dm row{
+    padding: 10px;
+}
+
+.bg-form{
+    background-color: #023a01;
+    color: white;
+    font-weight: bold;
+    font-size: 25px;
 }

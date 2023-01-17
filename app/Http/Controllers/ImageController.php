@@ -7,7 +7,7 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreImgRequest;
 
-class SlugController extends Controller
+class ImageController extends Controller
 {
 
     protected $imgService;
@@ -26,9 +26,7 @@ class SlugController extends Controller
 
     public function store(Request $request): RedirectResponse
     {
-        $data = $request;
         $slug = $this->imgService->store($request);
-//        dd($slug);
 
         if (is_null($slug)) {
             return redirect()->route('admin.img.create')

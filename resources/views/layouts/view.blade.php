@@ -10,7 +10,7 @@
 </head>
 <body>
 <div>
-    <a href="{{route(config('shin.route.INDEX_ADMIN'))}}">Admin</a>
+    <a href="{{route(config('shin.route.ADMIN'))}}" class="btn btn-success">Admin</a>
 </div>
 <header class="container header">
     <nav class="navbar navbar-expand-lg navbar-dark">

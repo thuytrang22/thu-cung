@@ -44,7 +44,7 @@ abstract class BaseRepository
      * @param array $columns
      * @return mixed
      */
-    public function find($id, array $columns = ['*']): mixed
+    public function find($id, array $columns = ['*'])
     {
         return $this->model->findOrFail($id, $columns);
     }
@@ -77,7 +77,7 @@ abstract class BaseRepository
      * @param $id
      * @return mixed
      */
-    public function update(array $attributes, $id): mixed
+    public function update(array $attributes, $id)
     {
         $object = $this->model->findOrFail($id);
         $object->fill($attributes);
@@ -92,7 +92,7 @@ abstract class BaseRepository
      * @param $id
      * @return mixed
      */
-    public function delete($id): mixed
+    public function delete($id)
     {
         $object = $this->model->findOrFail($id);
         return $object->destroy($id);
