@@ -18,6 +18,9 @@ class SpecieService
         $this->specieRepository = $specieRepository;
     }
 
+    public function getAll(){
+        return $this->specieRepository->getSpecies();
+    }
     public function index($request)
     {
         $keywords = trim($request->keyword);

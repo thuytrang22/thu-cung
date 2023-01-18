@@ -59,3 +59,8 @@ margin: 20px 0;
     font-weight: bold;
     font-size: 25px;
 }
+.img-form{
+    width: 100px;
+    height: auto;
+    object-fit: cover;
+}

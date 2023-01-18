@@ -39,6 +39,7 @@ class AnimalService
         $hashName = $image->hashName();
         $data = [
             'name_animal' => $request->name_animal,
+            'id_species' => $request->id_species,
             'image' => $hashName,
         ];
         $image->store('public');

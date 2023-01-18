@@ -2,16 +2,20 @@
 
 namespace App\Http\Controllers;
 
+use App\Services\SpecieService;
 use Illuminate\Http\Request;
 use App\Services\AnimalService;
 
 class AnimalController extends Controller
 {
     protected $animalService;
+    protected $specieService;
 
-    public function __construct(AnimalService $animalService)
+
+    public function __construct(AnimalService $animalService, SpecieService $specieService)
     {
         $this->animalService = $animalService;
+        $this->specieService = $specieService;
     }
 
     public function index(Request $request)
@@ -20,12 +24,13 @@ class AnimalController extends Controller
         return view('admin.animal.index', compact('animals'));
     }
     public function create (){
-        return view('admin.animal.create');
+        $species = $this->specieService->getAll();
+        return view('admin.animal.create', compact('species'));
     }
     public function store(Request $request)
     {
-        $product = $this->animalService->store($request);
-        if (is_null($product)) {
+        $animal = $this->animalService->store($request);
+        if (is_null($animal)) {
             return redirect()->route('admin.animal.index')
                 ->with('store', 'failed');
         }
@@ -35,21 +40,21 @@ class AnimalController extends Controller
 
     public function show($id)
     {
-        $product = $this->animalService->find($id);
-        return view('admin.animal.show', compact('product'));
+        $animal = $this->animalService->find($id);
+        return view('admin.animal.show', compact('animal'));
     }
 
     public function edit($id)
     {
-        $product = $this->animalService->find($id);
-        return view('admin.animal.edit', compact('product'));
+        $animal = $this->animalService->find($id);
+        return view('admin.animal.edit', compact('animal'));
     }
 
     public function update($request, $id)
     {
         $data = $request->all();
-        $product = $this->animalService->update($data, $id);
-        if (is_null($product)) {
+        $animal = $this->animalService->update($data, $id);
+        if (is_null($animal)) {
             return redirect()->route('admin.animal.index')
                 ->with('update', 'failed');
         }
@@ -59,8 +64,8 @@ class AnimalController extends Controller
 
     public function destroy($id)
     {
-        $product = $this->animalService->find($id);
-        if (!$product->delete()) {
+        $animal = $this->animalService->find($id);
+        if (!$animal->delete()) {
             return redirect()->route('admin.animal.index')
                 ->with('delete', 'failed');
         }

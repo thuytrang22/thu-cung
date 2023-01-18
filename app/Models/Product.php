@@ -14,4 +14,8 @@ class Product extends Model
         'image',
         'price',
     ];
+
+    public function specie(){
+       return  $this->belongsTo(Specie::class, 'id_species','id');
+    }
 }

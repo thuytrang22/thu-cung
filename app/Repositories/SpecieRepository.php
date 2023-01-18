@@ -11,6 +11,9 @@ class SpecieRepository extends BaseRepository
         return Specie::class;
     }
 
+    public function getSpecies(){
+        return $this->model->all();
+    }
     public function getIndex($keywords)
     {
         $species = $this->model->query();

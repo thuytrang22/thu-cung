@@ -35,69 +35,33 @@
     </div>
     <div class="container ">
         <div class="product">
-
-            <h3>Giống chó cảnh </h3>
-            <div class="category row" >
-                @foreach($category as $value)
-                    <div class="col-lg-3">
-                        <a href="#">
-                            <img src="{{url('storage/'.$value->slug)}}" alt="">
-                            <p>{{$value->name_slug}}</p>
-                        </a>
-                    </div>
+            <h3>Giống Chó Cảnh </h3>
+            <div class="category row">
+                @foreach($animals as $animal)
+                    @if($animal->specie->id == 1)
+                        <div class="col-lg-3">
+                            <a href="#">
+                                <img src="{{url('storage/'.$animal->image)}}" alt="">
+                                <p>{{$animal->name_animal}}</p>
+                            </a>
+                        </div>
+                    @endif
                 @endforeach
             </div>
-            <div class="category row" >
-                <div class="col-lg-3">
-                    <a href="#">
-                        <img src="{{asset('assets/images/poodle.jpg')}}" alt="">
-                        <p >Chó Poodle</p>
-                    </a>
-                </div>
-                <div class="col-lg-3">
-                    <a href="#">
-                        <img src="{{asset('assets/images/poodle.jpg')}}" alt="">
-                        <p >Chó Poodle</p>
-                    </a>
-                </div>
-                <div class="col-lg-3">
-                    <a href="#">
-                        <img src="{{asset('assets/images/poodle.jpg')}}" alt="">
-                        <p >Chó Poodle</p>
-                    </a>
-                </div>
-                <div class="col-lg-3">
-                    <a href="#">
-                        <img src="{{asset('assets/images/poodle.jpg')}}" alt="">
-                        <p >Chó Poodle</p>
-                    </a>
-                </div>
-            </div>
-            <div class="category row" >
-                <div class="col-lg-3">
-                    <a href="#">
-                        <img src="{{asset('assets/images/poodle.jpg')}}" alt="">
-                        <p >Chó Poodle</p>
-                    </a>
-                </div>
-                <div class="col-lg-3">
-                    <a href="#">
-                        <img src="{{asset('assets/images/poodle.jpg')}}" alt="">
-                        <p >Chó Poodle</p>
-                    </a>
-                </div>
-                <div class="col-lg-3">
-                    <a href="#">
-                        <img src="{{asset('assets/images/poodle.jpg')}}" alt="">
-                        <p >Chó Poodle</p>
-                    </a>
-                </div>
-                <div class="col-lg-3">
-                    <a href="#">
-                        <img src="{{asset('assets/images/poodle.jpg')}}" alt="">
-                        <p >Chó Poodle</p>
-                    </a>
-                </div>
+        </div>
+        <div class="product">
+            <h3>Giống Chó Cảnh </h3>
+            <div class="category row">
+                @foreach($animals as $animal)
+                    @if($animal->specie->id == 2)
+                        <div class="col-lg-3">
+                            <a href="#">
+                                <img src="{{url('storage/'.$animal->image)}}" alt="">
+                                <p>{{$animal->name_animal}}</p>
+                            </a>
+                        </div>
+                    @endif
+                @endforeach
             </div>
         </div>
     </div>

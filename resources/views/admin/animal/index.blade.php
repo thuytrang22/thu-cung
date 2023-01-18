@@ -52,30 +52,34 @@
                             </thead>
                             <tbody>
                             @if(count($animals) > 0)
-                            @foreach($animals as $animal)
+                                @foreach($animals as $animal)
+                                    <tr>
+                                        <td>{{$animal->id}}</td>
+                                        <td>{{$animal->specie->name}}</td>
+                                        <td>{{$animal->name_animal}}</td>
+                                        <td>
+                                            <img class="img-form"
+                                                 src="{{url('storage/'.$animal->image)}}" alt="">
+                                        </td>
+                                        <td>
+                                            <form action="{{route((config('shin.route.DESTROY_ANIMAL')),$animal->id)}}"
+                                                  method="POST">
+                                                <a class="btn btn-outline-primary"
+                                                   href="{{route((config('shin.route.EDIT_ANIMAL')),$animal->id)}}">Edit</a>
+                                                <a class="btn btn-outline-success"
+                                                   href="{{route((config('shin.route.SHOW_ANIMAL')),$animal->id)}}">Show</a>
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit" class="btn btn-outline-danger">Delete</button>
+                                            </form>
+                                        </td>
+                                    </tr>
+                                @endforeach
+                            @else
                                 <tr>
-                                    <td>{{$animal->id}}</td>
-                                    <td>{{$animal->id_species}}</td>
-                                    <td>{{$animal->name_animal}}</td>
-                                    <td>{{$animal->image}}</td>
-                                    <td>
-                                        <form action="{{route((config('shin.route.DESTROY_ANIMAL')),$animal->id)}}" method="POST">
-                                             <a class="btn btn-outline-primary"
-                                               href="{{route((config('shin.route.EDIT_ANIMAL')),$animal->id)}}">Edit</a>
-                                            <a class="btn btn-outline-success"
-                                               href="{{route((config('shin.route.SHOW_ANIMAL')),$animal->id)}}">Show</a>
-                                            @csrf
-                                            @method('DELETE')
-                                            <button type="submit" class="btn btn-outline-danger">Delete</button>
-                                        </form>
-                                    </td>
+                                    <td colspan="5" class="text-center">No Data Found</td>
                                 </tr>
-                            @endforeach
-                             @else
-                                 <tr>
-                                     <td colspan="5" class="text-center">No Data Found</td>
-                                 </tr>
-                             @endif
+                            @endif
                             </tbody>
                         </table>
                     </div>

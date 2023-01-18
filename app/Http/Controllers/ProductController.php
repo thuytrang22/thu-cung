@@ -4,14 +4,16 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Services\ProductService;
+use App\Services\SpecieService;
 
 class ProductController extends Controller
 {
     protected $productService;
-
-    public function __construct(ProductService $productService)
+    protected $specieService;
+    public function __construct(ProductService $productService, SpecieService $specieService)
     {
         $this->productService = $productService;
+        $this->specieService = $specieService;
     }
 
     public function index(Request $request)
@@ -20,7 +22,8 @@ class ProductController extends Controller
         return view('admin.product.index', compact('products'));
     }
     public function create (){
-        return view('admin.product.create');
+        $species = $this->specieService->getAll();
+        return view('admin.product.create',compact('species'));
     }
 
     public function store(Request $request)

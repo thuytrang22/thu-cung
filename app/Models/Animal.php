@@ -13,4 +13,8 @@ class Animal extends Model
         'name_animal',
         'image',
     ];
+
+    public function specie(){
+        return $this->belongsTo(Specie::class, 'id_species','id');
+    }
 }

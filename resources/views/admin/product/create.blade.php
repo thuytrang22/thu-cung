@@ -10,7 +10,14 @@
                             <form action="{{route(config('shin.route.STORE_PRODUCT'))}}" method="post"
                                   enctype="multipart/form-data">
                                 @csrf
-
+                                <div class="form_name ">
+                                    <label for="">Name Specie: </label>
+                                    <select name="id_species" type="text" id="id_species">
+                                        @foreach($species as $specie)
+                                            <option value="{{$specie->id}}">{{$specie->name}}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
                                 <div class="form_name ">
                                     <label for="">Name Project: </label>
                                     <input name="name_product" type="text" id="name_product" required>

@@ -32,30 +32,30 @@ Route::prefix('species')->group(function () {
     Route::get('/', [SpecieController::class, 'index'])->name(config('shin.route.SPECIE'));
     Route::get('create', [SpecieController::class, 'create'])->name(config('shin.route.CREATE_SPECIE'));
     Route::post('store', [SpecieController::class, 'store'])->name(config('shin.route.STORE_SPECIE'));
-    Route::post('edit', [SpecieController::class, 'edit'])->name(config('shin.route.EDIT_SPECIE'));
+    Route::post('edit/{id}', [SpecieController::class, 'edit'])->name(config('shin.route.EDIT_SPECIE'));
     Route::put('update/{id}', [SpecieController::class, 'update'])->name('shin.route.UPDATE_SPECIE');
     Route::get('show/{id}', [SpecieController::class, 'show'])->name(config('shin.route.SHOW_SPECIE'));
-    Route::delete('destroy' ,[SpecieController::class, 'destroy'])->name(config('shin.route.DESTROY_SPECIE'));
+//    Route::delete('destroy/{id}' ,[SpecieController::class, 'destroy'])->name(config('shin.route.DESTROY_SPECIE'));
 });
 
 Route::prefix('animals')->group(function () {
     Route::get('/', [AnimalController::class, 'index'])->name(config('shin.route.ANIMAL'));
     Route::get('create', [AnimalController::class, 'create'])->name(config('shin.route.CREATE_ANIMAL'));
     Route::post('store', [AnimalController::class, 'store'])->name(config('shin.route.STORE_ANIMAL'));
-    Route::post('edit', [AnimalController::class, 'edit'])->name(config('shin.route.EDIT_ANIMAL'));
+    Route::get('edit/{id}', [AnimalController::class, 'edit'])->name(config('shin.route.EDIT_ANIMAL'));
     Route::put('update/{id}', [AnimalController::class, 'update'])->name('shin.route.UPDATE_ANIMAL');
     Route::get('show/{id}', [AnimalController::class, 'show'])->name(config('shin.route.SHOW_ANIMAL'));
-    Route::delete('destroy' ,[AnimalController::class, 'destroy'])->name(config('shin.route.DESTROY_ANIMAL'));
+//    Route::delete('destroy' ,[AnimalController::class, 'destroy'])->name(config('shin.route.DESTROY_ANIMAL'));
 });
 
 Route::prefix('product')->group(function () {
     Route::get('/', [ProductController::class, 'index'])->name(config('shin.route.PRODUCT'));
     Route::get('create', [ProductController::class, 'create'])->name(config('shin.route.CREATE_PRODUCT'));
     Route::post('store', [ProductController::class, 'store'])->name(config('shin.route.STORE_PRODUCT'));
-    Route::post('edit', [ProductController::class, 'edit'])->name(config('shin.route.EDIT_PRODUCT'));
+    Route::post('edit/{id}', [ProductController::class, 'edit'])->name(config('shin.route.EDIT_PRODUCT'));
     Route::put('update/{id}', [ProductController::class, 'update'])->name('shin.route.UPDATE_PRODUCT');
     Route::get('show/{id}', [ProductController::class, 'show'])->name(config('shin.route.SHOW_PRODUCT'));
-    Route::delete('destroy' ,[ProductController::class, 'destroy'])->name(config('shin.route.DESTROY_PRODUCT'));
+//    Route::delete('destroy' ,[ProductController::class, 'destroy'])->name(config('shin.route.DESTROY_PRODUCT'));
 });
 
 Route::prefix('blogs')->group(function () {

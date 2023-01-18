@@ -2,7 +2,7 @@
 
 namespace App\Services;
 
-use App\Models\Specie;
+use App\Models\Product;
 use App\Repositories\ProductRepository;
 use Illuminate\Support\Str;
 
@@ -39,6 +39,7 @@ class ProductService
         $hashName = $image->hashName();
         $data = [
             'name_product' => $request->name_product,
+            'id_species' => $request->id_species,
             'image' => $hashName,
             'price'=>$request->price,
         ];

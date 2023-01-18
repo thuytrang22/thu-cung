@@ -55,16 +55,19 @@
                                 @foreach($products as $product)
                                     <tr>
                                         <td>{{$product->id}}</td>
-                                        <td>{{$product->id_specie}}</td>
+                                        <td>{{$product->specie->name}}</td>
                                         <td>{{$product->name_product}}</td>
-                                        <td>{{$product->image}}</td>
+                                        <td>
+                                            <img class="img-form"
+                                                 src="{{url('storage/'.$product->image)}}" alt="">
+                                        </td>
                                         <td>{{$product->price}}</td>
                                         <td>
-                                            <form action="{{route((config('shin.route.DESTROY_PRODUCT')),$specie->id)}}" method="POST">
+                                            <form action="{{route((config('shin.route.DESTROY_PRODUCT')),$product->id)}}" method="POST">
                                                <a class="btn btn-outline-primary"
-                                                   href="{{route((config('shin.route.EDIT_PRODUCT')),$specie->id)}}">Edit</a>
+                                                   href="{{route((config('shin.route.EDIT_PRODUCT')),$product->id)}}">Edit</a>
                                                 <a class="btn btn-outline-success"
-                                                   href="{{route((config('shin.route.SHOW_PRODUCT')),$specie->id)}}">Show</a>
+                                                   href="{{route((config('shin.route.SHOW_PRODUCT')),$product->id)}}">Show</a>
                                                 @csrf
                                                 @method('DELETE')
                                                 <button type="submit" class="btn btn-outline-danger">Delete</button>
