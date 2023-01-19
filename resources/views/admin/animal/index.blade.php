@@ -58,12 +58,13 @@
                                         <td>{{$animal->specie->name}}</td>
                                         <td>{{$animal->name_animal}}</td>
                                         <td>
-                                            <img class="img-form"
-                                                 src="{{url('storage/'.$animal->image)}}" alt="">
+                                            <img class="img-form" src="{{url('storage/'.$animal->image)}}" alt="">
                                         </td>
                                         <td>
                                             <form action="{{route((config('shin.route.DESTROY_ANIMAL')),$animal->id)}}"
                                                   method="POST">
+                                                <a class="btn btn-outline-secondary button"
+                                                   href="{{route(config('shin.route.DETAIL_ANIMAL'))}}">View Animal</a>
                                                 <a class="btn btn-outline-primary"
                                                    href="{{route((config('shin.route.EDIT_ANIMAL')),$animal->id)}}">Edit</a>
                                                 <a class="btn btn-outline-success"

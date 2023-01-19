@@ -8,6 +8,7 @@ use App\Http\Controllers\SpecieController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\AnimalController;
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\DetailAnimalController;
 
 /*
 |--------------------------------------------------------------------------
@@ -56,6 +57,15 @@ Route::prefix('product')->group(function () {
     Route::put('update/{id}', [ProductController::class, 'update'])->name('shin.route.UPDATE_PRODUCT');
     Route::get('show/{id}', [ProductController::class, 'show'])->name(config('shin.route.SHOW_PRODUCT'));
 //    Route::delete('destroy' ,[ProductController::class, 'destroy'])->name(config('shin.route.DESTROY_PRODUCT'));
+});
+
+Route::prefix('detail_animal')->group(function (){
+    Route::get('/',[DetailAnimalController::class, 'index'])->name(config('shin.route.DETAIL_ANIMAL'));
+    Route::get('create', [DetailAnimalController::class, 'create'])->name(config('shin.route.CREATE_DETAIL_ANIMAL'));
+    Route::post('store', [DetailAnimalController::class, 'store'])->name(config('shin.route.STORE_DETAIL_ANIMAL'));
+    Route::get('edit/{id}', [DetailAnimalController::class, 'edit'])->name(config('shin.route.EDIT_DETAIL_ANIMAL'));
+    Route::put('update/{id}', [DetailAnimalController::class, 'update'])->name('shin.route.UPDATE_DETAIL_ANIMAL');
+    Route::get('show/{id}', [DetailAnimalController::class, 'show'])->name(config('shin.route.SHOW_DETAIL_ANIMAL'));
 });
 
 Route::prefix('blogs')->group(function () {

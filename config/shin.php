@@ -28,6 +28,14 @@ return[
         'SHOW_PRODUCT'=>'admin.product.show',
         'DESTROY_PRODUCT'=>'admin.product.index',
 
+        'DETAIL_ANIMAL'=>'admin.detail_animal.index',
+        'CREATE_DETAIL_ANIMAL'=>'admin.detail_animal.create',
+        'STORE_DETAIL_ANIMAL'=>'admin.detail_animal.store',
+        'EDIT_DETAIL_ANIMAL'=>'admin.detail_animal.edit',
+        'UPDATE_DETAIL_ANIMAL'=>'admin.detail_animal.index',
+        'SHOW_DETAIL_ANIMAL'=>'admin.detail_animal.show',
+        'DESTROY_DETAIL_ANIMAL'=>'admin.detail_animal.index',
+
         'BLOG'=>'admin.blog.index',
         'IMG'=> 'admin.img.index',
         'CREATE_IMG'=> 'admin.img.create',

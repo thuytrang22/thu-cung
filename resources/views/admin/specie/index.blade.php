@@ -22,11 +22,15 @@
                 <div>
                     <h4>Species</h4>
                 </div>
-                <div class="col-lg-4">
+                <div class="col-lg-5">
                     <div class="col-auto">
                         <a href="{{route(config('shin.route.CREATE_SPECIE'))}}" class="btn btn-primary">
                             Create
                         </a>
+                        <a class="btn btn-outline-secondary button"
+                           href="{{route(config('shin.route.ANIMAL'))}}">View Animal</a>
+                        <a class="btn btn-outline-info button"
+                           href="{{route(config('shin.route.PRODUCT'))}}">View Project</a>
                         <a href="{{route(config('shin.route.ADMIN'))}}" class="btn btn-warning">Back</a>
                     </div>
                     <form action="?" class="col-auto ms-auto">
@@ -56,10 +60,6 @@
                                     <td>{{$specie->name}}</td>
                                     <td>
                                         <form action="{{route((config('shin.route.DESTROY_SPECIE')),$specie->id)}}" method="POST">
-                                            <a class="btn btn-outline-secondary button"
-                                              {{-- href="{{url((config('shin.route.SPECIE')) . $specie->id . '/animals')}}"--}}>View Animal</a>
-                                            <a class="btn btn-outline-info button"
-                                               {{--href="{{url((config('shin.route.SPECIE')) . $specie->id . '/products')}}"--}}>View Project</a>
                                             <a class="btn btn-outline-primary"
                                                href="{{route((config('shin.route.EDIT_SPECIE')),$specie->id)}}">Edit</a>
                                             <a class="btn btn-outline-success"

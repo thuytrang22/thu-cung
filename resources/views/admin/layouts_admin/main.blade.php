@@ -20,13 +20,9 @@
                 <nav class="navbar navbar-expand-lg navbar-dark">
                     <div>
                         <a class="logo" href="#"><img src="{{asset('assets/images/shin_meo.png')}}"></a>
-                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown"
-                                aria-expanded="false"
-                                aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
-                        <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
+
+
+                        <div>
                             <ul class="navbar-nav">
                                 <li class="nav-item dropdown">
                                     <a class="nav-link " href="{{route(config('shin.route.ADMIN'))}}" role="button"
@@ -37,7 +33,7 @@
                                 </li>
                             </ul>
                         </div>
-                        <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
+                        <div>
                             <ul class="navbar-nav">
                                 <li class="nav-item dropdown">
                                     <a class="nav-link " href="{{route(config('shin.route.SPECIE'))}}" role="button"
@@ -48,8 +44,8 @@
                                 </li>
                             </ul>
                         </div>
-                        <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
-                            <ul class="navbar-nav">
+                        <div>
+                            <ul>
                                 <li class="nav-item dropdown">
                                     <a class="nav-link " href="{{route(config('shin.route.ANIMAL'))}}" role="button"
                                        data-bs-toggle="dropdown"
@@ -59,10 +55,24 @@
                                 </li>
                             </ul>
                         </div>
-                        <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
-                            <ul class="navbar-nav">
+                        <div>
+                            <ul>
+                                <ul>
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link " href="{{route(config('shin.route.ANIMAL'))}}" role="button"
+                                           data-bs-toggle="dropdown"
+                                           aria-expanded="false">
+                                           Detail Animals
+                                        </a>
+                                    </li>
+                                </ul>
+                            </ul>
+                        </div>
+                        <div>
+                            <ul>
                                 <li class="nav-item dropdown">
-                                    <a class="nav-link " href="{{route(config('shin.route.PRODUCT'))}}" role="button" data-bs-toggle="dropdown"
+                                    <a class="nav-link " href="{{route(config('shin.route.PRODUCT'))}}" role="button"
+                                       data-bs-toggle="dropdown"
                                        aria-expanded="false">
                                         Product
                                     </a>
@@ -72,7 +82,8 @@
                         <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
                             <ul class="navbar-nav">
                                 <li class="nav-item dropdown">
-                                    <a class="nav-link" href="{{route(config('shin.route.BLOG'))}}" role="button" data-bs-toggle="dropdown"
+                                    <a class="nav-link" href="{{route(config('shin.route.BLOG'))}}" role="button"
+                                       data-bs-toggle="dropdown"
                                        aria-expanded="false">
                                         Blog
                                     </a>
@@ -103,7 +114,8 @@
                         <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
                             <ul class="navbar-nav">
                                 <li class="nav-item dropdown">
-                                    <a class="nav-link " href="{{route(config('shin.route.HOME'))}}" role="button" data-bs-toggle="dropdown"
+                                    <a class="nav-link " href="{{route(config('shin.route.HOME'))}}" role="button"
+                                       data-bs-toggle="dropdown"
                                        aria-expanded="false">
                                         Back Home
                                     </a>

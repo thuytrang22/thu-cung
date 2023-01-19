@@ -15,7 +15,11 @@ class CreateDetailAnimalsTable extends Migration
     {
         Schema::create('detail_animals', function (Blueprint $table) {
             $table->id();
-            $table->string('id_animal');
+            $table->string('id_animals');
+            $table->string('height');
+            $table->string('size');
+            $table->string('source');
+            $table->string('longevity');
             $table->string('information');
             $table->timestamps();
         });
