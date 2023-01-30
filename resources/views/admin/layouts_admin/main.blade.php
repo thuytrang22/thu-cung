@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="{{asset('assets/css/admin/product.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/admin/create.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/admin/show.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/css/admin/detail.css')}}">
 </head>
 <body>
 <div class="container">
@@ -59,7 +60,7 @@
                             <ul>
                                 <ul>
                                     <li class="nav-item dropdown">
-                                        <a class="nav-link " href="{{route(config('shin.route.ANIMAL'))}}" role="button"
+                                        <a class="nav-link " href="{{route(config('shin.route.DETAIL_ANIMAL'))}}" role="button"
                                            data-bs-toggle="dropdown"
                                            aria-expanded="false">
                                            Detail Animals

@@ -2,18 +2,17 @@
 
 namespace App\Services;
 
-use App\Models\Specie;
-use App\Repositories\animalRepository;
+use App\Repositories\DetailAnimalRepository;
 use Illuminate\Support\Str;
 
 class DetailAnimalService
 {
     /**
-     * @var AnimalRepository
+     * @var DetailAnimalRepository
      */
     protected $detailAnimalRepository;
 
-    public function __construct(AnimalRepository $detailAnimalRepository)
+    public function __construct(DetailAnimalRepository $detailAnimalRepository)
     {
         $this->detailAnimalRepository = $detailAnimalRepository;
     }
@@ -33,8 +32,17 @@ class DetailAnimalService
      * @param $data
      * @return mixed
      */
-    public function store($data)
+    public function store($request)
     {
+        $data =[
+            'id_animals' => $request->id_amimals,
+            'height' =>$request->height,
+            'size' =>$request->size,
+            'source' =>$request->source,
+            'longevity'=>$request->longevity,
+            'information' =>$request->information,
+        ];
+dd($data);
         return $this->detailAnimalRepository->create($data);
 
     }

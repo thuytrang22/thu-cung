@@ -10,7 +10,9 @@ class AnimalRepository extends BaseRepository
     {
         return Animal::class;
     }
-
+    public function getAnimals(){
+        return $this->model->all();
+    }
     public function getIndex($keywords)
 
     {

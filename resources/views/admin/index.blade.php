@@ -2,8 +2,5 @@
 @section('content')
     <main>
         @include('admin.dashboard.dashboard')
-        @include('admin.product.product')
-        @include('admin.animal.animal')
-        @include('admin.specie.specie')
     </main>
 @endsection

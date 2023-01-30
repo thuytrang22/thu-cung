@@ -4,27 +4,27 @@
     <main>
         @if ( session('store'))
             <div class="alert alert-success alert-dismissible fade show" role="alert">
-                <strong>Saved Successfully!</strong>Specie has been successfully saved
+                <strong>Saved Successfully!</strong>Detail animal has been successfully saved
             </div>
         @endif
         @if ( session('update'))
             <div class="alert alert-success alert-dismissible fade show" role="alert">
-                <strong>Update Successfully!</strong>Specie has been successfully update
+                <strong>Update Successfully!</strong>Detail animal  has been successfully update
             </div>
         @endif
         @if ( session('destroy'))
             <div class="alert alert-success alert-dismissible fade show" role="alert">
-                <strong>Delete Successfully!</strong>Specie has been successfully delete
+                <strong>Delete Successfully!</strong>Detail animal  has been successfully delete
             </div>
         @endif
         <section class="animal">
             <div class="container">
                 <div>
-                    <h4>Animals</h4>
+                    <h4>Detail Animals</h4>
                 </div>
                 <div class="col-lg-4">
                     <div class="col-auto">
-                        <a href="{{route(config('shin.route.CREATE_ANIMAL'))}}" class="btn btn-primary">
+                        <a href="{{route(config('shin.route.CREATE_DETAIL_ANIMAL'))}}" class="btn btn-primary">
                             Create
                         </a>
                         <a href="{{route(config('shin.route.ADMIN'))}}" class="btn btn-warning">Back</a>
@@ -44,10 +44,13 @@
                             <thead>
                             <tr>
                                 <th>S.No</th>
-                                <th>Id Specie</th>
-                                <th>Name</th>
-                                <th width="200px">Image</th>
-                                <th width="500px">Action</th>
+                                <th>Id Animal</th>
+                                <th>Height</th>
+                                <th>Size</th>
+                                <th>Source</th>
+                                <th>Longevity</th>
+                                <th>Information</th>
+                                <th>Action</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -56,9 +59,12 @@
                                     <tr>
                                         <td>{{$detail->id}}</td>
                                         <td>{{$detail->specie->name}}</td>
-                                        <td>{{$detail->name_animal}}</td>
-                                        <td></td>
-                                        <td>
+                                        <td>{{$detail->height}}</td>
+                                        <td>{{$detail->size}}</td>
+                                        <td>{{$detail->source}}</td>
+                                        <td>{{$detail->longevity}}</td>
+                                        <td>{{$detail->information}}</td>
+                                     {{--   <td>
                                             <form action="{{route((config('shin.route.DESTROY_ANIMAL')),$detail->id)}}"
                                                   method="POST">
                                                 <a class="btn btn-outline-primary"
@@ -69,12 +75,12 @@
                                                 @method('DELETE')
                                                 <button type="submit" class="btn btn-outline-danger">Delete</button>
                                             </form>
-                                        </td>
+                                        </td>--}}
                                     </tr>
                                 @endforeach
                             @else
                                 <tr>
-                                    <td colspan="5" class="text-center">No Data Found</td>
+                                    <td colspan="12" class="text-center">No Data Found</td>
                                 </tr>
                             @endif
                             </tbody>

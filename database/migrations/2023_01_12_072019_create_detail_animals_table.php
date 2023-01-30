@@ -32,6 +32,6 @@ class CreateDetailAnimalsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('detail_animals');
+        Schema::dropIfExists('detail_animal');
     }
 }

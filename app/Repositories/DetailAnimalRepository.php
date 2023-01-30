@@ -2,13 +2,13 @@
 
 namespace App\Repositories;
 
-use App\Models\Detail_Animal;
+use App\Models\DetailAnimal;
 
 class DetailAnimalRepository extends BaseRepository
 {
     public function model()
     {
-        return Detail_Animal::class;
+        return DetailAnimal::class;
     }
 
     public function getIndex($keywords)

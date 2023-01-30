@@ -13,7 +13,9 @@ class Animal extends Model
         'name_animal',
         'image',
     ];
-
+    public function detail_animal(){
+        return $this->hasMany(DetailAnimal::class, 'id');
+    }
     public function specie(){
         return $this->belongsTo(Specie::class, 'id_species','id');
     }

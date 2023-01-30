@@ -17,6 +17,9 @@ class AnimalService
     {
         $this->animalRepository = $animalRepository;
     }
+    public function getAll(){
+        return $this->animalRepository->getAnimals();
+    }
 
     public function index($request)
     {

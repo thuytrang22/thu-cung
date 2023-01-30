@@ -1,0 +1,19 @@
+.col-auto input, select{
+    float: right;
+    width: 184px;
+}
+.col-lg-9 .row{
+    justify-content: center;
+}
+.form_detail{
+    display: flex;
+    margin: 10px 0;
+}
+.detail{
+    margin-right:15px ;
+    width: 117px;
+    float: right;
+}
+.input{
+    float: right;
+}

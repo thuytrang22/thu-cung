@@ -5,20 +5,19 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Detail_Animal extends Model
+class DetailAnimal extends Model
 {
     use HasFactory;
     protected $fillable = [
         'id_animals',
         'height',
-        'height',
+        'size',
         'source',
         'longevity',
         'information',
-
     ];
-
-    public function specie(){
-        return $this->belongsTo(Specie::class, 'id_species','id');
+    protected $table = 'detail_animals';
+    public function animal(){
+        return $this->belongsTo(Animal::class, 'id_animals','id');
     }
 }

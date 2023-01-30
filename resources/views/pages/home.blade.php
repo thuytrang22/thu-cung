@@ -50,7 +50,7 @@
             </div>
         </div>
         <div class="product">
-            <h3>Giống Chó Cảnh </h3>
+            <h3>Giống Mèo Cảnh </h3>
             <div class="category row">
                 @foreach($animals as $animal)
                     @if($animal->specie->id == 2)

@@ -19,34 +19,34 @@ class DetailAnimalController extends Controller
 
     public function index(Request $request)
     {
-        $detail_animals = $this->animalService->index($request);
+        $detail_animals = $this->detailAnimalService->index($request);
         return view('admin.detail_animal.index', compact('detail_animals'));
     }
     public function create (){
-        $species = $this->detailAnimalService->getAll();
-        return view('admin.animal.create', compact('species'));
+        $animals = $this->animalService->getAll();
+        return view('admin.detail_animal.create', compact('animals'));
     }
     public function store(Request $request)
     {
-        $animal = $this->detailAnimalService->store($request);
-        if (is_null($animal)) {
-            return redirect()->route('admin.animal.index')
+        $detail_animal = $this->detailAnimalService->store($request);
+        if (is_null($detail_animal)) {
+            return redirect()->route('admin.detail_animal.index')
                 ->with('store', 'failed');
         }
-        return redirect()->route('admin.animal.index')
+        return redirect()->route('admin.detail_animal.index')
             ->with('store', 'success');
     }
 
     public function show($id)
     {
         $animal = $this->detailAnimalService->find($id);
-        return view('admin.animal.show', compact('animal'));
+        return view('admin.detail_animal.show', compact('animal'));
     }
 
     public function edit($id)
     {
         $animal = $this->detailAnimalService->find($id);
-        return view('admin.animal.edit', compact('animal'));
+        return view('admin.detail_animal.edit', compact('animal'));
     }
 
     public function update($request, $id)
@@ -54,10 +54,10 @@ class DetailAnimalController extends Controller
         $data = $request->all();
         $animal = $this->detailAnimalService->update($data, $id);
         if (is_null($animal)) {
-            return redirect()->route('admin.animal.index')
+            return redirect()->route('admin.detail_animal.index')
                 ->with('update', 'failed');
         }
-        return redirect()->route('admin.animal.index')
+        return redirect()->route('admin.detail_animal.index')
             ->with('update', 'success');
     }
 
@@ -65,10 +65,10 @@ class DetailAnimalController extends Controller
     {
         $animal = $this->detailAnimalService->find($id);
         if (!$animal->delete()) {
-            return redirect()->route('admin.animal.index')
+            return redirect()->route('admin.detail_animal.index')
                 ->with('delete', 'failed');
         }
-        return redirect()->route('admin.animal.index')
+        return redirect()->route('admin.detail_animal.index')
             ->with('delete', 'success');
     }
 }
